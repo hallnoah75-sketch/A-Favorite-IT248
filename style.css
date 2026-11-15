@@ -1,0 +1,53 @@
+/* Tesla Model Y personal website: one-page, responsive, and static */
+:root { --ink:#152239; --muted:#5d6b7f; --red:#de344b; --navy:#101c30; --cream:#f6f7f9; --white:#fff; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; color:var(--ink); background:var(--white); font-family:Arial,Helvetica,sans-serif; line-height:1.65; }
+a { color:inherit; }
+a:focus-visible { outline:3px solid var(--red); outline-offset:5px; }
+.site-header { position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:24px clamp(24px,6vw,96px); background:var(--navy); color:white; }
+.brand,.footer>span { text-decoration:none; letter-spacing:.15em; font-size:.8rem; font-weight:800; white-space:nowrap; }
+.brand-dot { color:#fa566b; }
+nav { display:flex; flex-wrap:wrap; gap:clamp(14px,3vw,36px); }
+nav a { text-decoration:none; color:#d3dbe7; font-size:.85rem; }
+nav a:hover,.footer a:hover { color:#ff7c8a; }
+.hero { position:relative; overflow:hidden; background:radial-gradient(circle at 78% 45%,#263e58 0%,#15263c 42%,#101c30 90%); color:white; min-height:610px; display:flex; flex-direction:column; justify-content:center; padding:80px clamp(24px,6vw,96px) 72px; }
+.hero-inner { max-width:630px; position:relative; z-index:1; }
+.eyebrow { margin:0 0 15px; color:#fa7184; letter-spacing:.19em; text-transform:uppercase; font-size:.7rem; font-weight:800; }
+.eyebrow.dark { color:var(--red); }
+h1,h2,h3,p { margin-top:0; }
+h1,h2 { letter-spacing:-.045em; line-height:1.1; }
+h1 { font-size:clamp(3.3rem,7vw,6.8rem); margin-bottom:24px; }
+h1 em,h2 em { color:#ff677b; font-style:normal; }
+.hero-copy { max-width:500px; color:#cbd5e2; font-size:1.13rem; margin-bottom:30px; }
+.button { display:inline-flex; align-items:center; gap:18px; padding:14px 22px; border-radius:5px; background:var(--red); color:white; font-size:.88rem; font-weight:700; text-decoration:none; transition:transform .2s,background .2s; }
+.button:hover { transform:translateY(-2px); background:#f04b60; }
+.hero-art { align-self:flex-end; width:min(62%,790px); margin:-55px -20px -58px 0; opacity:.97; }
+.hero-art svg { display:block; width:100%; height:auto; }
+.hero-counter { position:absolute; bottom:26px; right:clamp(24px,6vw,96px); font-size:.64rem; color:#a3b3c5; letter-spacing:.17em; }
+.section { padding:100px clamp(24px,8vw,128px); }
+.intro { display:grid; grid-template-columns: .85fr 1.15fr; gap:clamp(30px,7vw,120px); align-items:start; }
+h2 { font-size:clamp(2.4rem,4.3vw,4.4rem); margin-bottom:24px; }
+h2 span { color:var(--red); }
+.intro-text { max-width:700px; font-size:1.08rem; color:#485b70; }
+.intro-text p + p { margin-top:20px; }
+.features-section { background:var(--cream); }
+.center { text-align:center; }
+.section-subtitle { color:var(--muted); }
+.feature-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin-top:48px; }
+.feature-card { padding:38px 32px; background:white; border:1px solid #e7e9ef; border-radius:10px; box-shadow:0 12px 24px rgba(25,36,58,.035); }
+.feature-icon { display:grid; place-items:center; width:50px; height:50px; background:#fff1f3; color:var(--red); border-radius:12px; font-size:1.65rem; margin-bottom:27px; }
+h3 { font-size:1.24rem; margin-bottom:12px; }
+.feature-card p { color:var(--muted); font-size:.96rem; margin:0; }
+.story-section { background:white; }
+.story-card { position:relative; display:grid; grid-template-columns:1.35fr .65fr; align-items:center; gap:50px; padding:clamp(32px,6vw,80px); border-radius:12px; color:white; background:linear-gradient(120deg,#101c30,#263b57); overflow:hidden; }
+.story-card p:not(.eyebrow) { max-width:660px; color:#d3dce8; }
+.story-card h2 { max-width:600px; }
+.story-card blockquote { margin:0; position:relative; z-index:1; font-size:clamp(1.4rem,2.2vw,2rem); font-weight:700; line-height:1.35; }
+.quote-mark { position:absolute; right:15%; top:2%; font-family:Georgia,serif; font-size:21rem; line-height:1; color:#ffffff0c; }
+.footer { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:22px; background:#0a1425; color:#f0f3f8; padding:34px clamp(24px,6vw,96px); }
+.footer p { margin:0; font-size:.84rem; color:#a7b4c6; }
+.footer a { text-decoration:none; font-size:.84rem; }
+@media (max-width:900px) { .hero-art { width:min(85%,700px); margin:0 -28px -42px 0; } .hero { min-height:unset; } .intro { grid-template-columns:1fr; gap:16px; } .feature-grid { grid-template-columns:1fr; } .story-card { grid-template-columns:1fr; gap:18px; } }
+@media (max-width:560px) { .site-header { align-items:flex-start; flex-direction:column; padding-top:20px; padding-bottom:20px; } nav { gap:12px 18px; } nav a { font-size:.77rem; } .hero { padding-top:70px; padding-bottom:65px; } .hero-art { width:115%; margin:18px -36px -18px -24px; } .hero-counter { bottom:18px; } .section { padding-top:70px; padding-bottom:70px; } .feature-card { padding:28px 25px; } .footer { flex-direction:column; align-items:flex-start; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button { transition:none; } }
